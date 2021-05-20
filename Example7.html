@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+    <head runat="server">  
+        <script src="jquery-1.7.1.js" type="text/javascript"></script>  
+         <script>
+             var xhr = new XMLHttpRequest();
+          xhr.onreadystatechange = function() {
+         if (xhr.readyState === 4){
+        document.getElementById('result').innerHTML = xhr.responseText;
+    }
+};
+xhr.open('GET', 'http://www.example.com/api/get/1');
+xhr.send();
+        </script>  
+    </head>  
+    <body>  
+            <input type="button" id="result" value="open" />  
+    </body>
+  
+</html>

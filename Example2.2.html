@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<p>
+    Find the maximum consecutive 1's in an array of 0's and 1's
+   <p>[1,0,0,0,0,1,0,0,0,1]</p>
+</p>
+<body>
+    <script>
+        const arr = [1,0,0,0,0,1,0,0,0,1];
+const findMaxConsecutiveOnes = (arr = []) => {
+   let left = 0;
+   let right = 0;
+   let max = 0;
+   while (right < arr.length) {
+      if (arr[right] === 0) {
+         if (right - left > max) {
+            max = right - left
+         };
+         right++;
+         left = right;
+      } else {
+         right++
+      };
+   };
+   return right - left > max ? right - left : max;
+}
+document.writeln(findMaxConsecutiveOnes(arr));
+    </script>
+</body>
+</html>
